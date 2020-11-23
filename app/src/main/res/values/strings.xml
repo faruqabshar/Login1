@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Login</string>
 
-    <string name="title_activity_login">Sign in or create account</string>
+    <string name="title_activity_login">Masuk atau Mendaftar</string>
     <string name="title_activity_main">Dashboard</string>
 
     <string name="prompt_email">Email</string>
