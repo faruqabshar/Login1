@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView txt_profile_name;
+    //TextView txt_profile_name;
     Button btn_logout;
 
     SharedPreferences sharedpreferences;
@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        txt_profile_name = (TextView) findViewById(R.id.txt_profile_name);
-        txt_profile_name.setText(getIntent().getExtras().get("name").toString());
+        //txt_profile_name = (TextView) findViewById(R.id.txt_profile_name);
+        //txt_profile_name.setText(getIntent().getExtras().get("name").toString());
 
         btn_logout = (Button) findViewById(R.id.btn_logout);
         btn_logout.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putString(LoginActivity.TAG_PHONE, null);
         editor.commit();
 
-        intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent = new Intent(MainActivity.this, MainActivity.class);
         finish();
         startActivity(intent);
 
@@ -66,4 +66,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(tentang);
     }
 
+    public void DaftarBuku(View view) {
+        Intent DaftarBuku= new Intent(MainActivity.this, ActivityDaftarBuku.class);
+        startActivity(DaftarBuku);
+    }
 }

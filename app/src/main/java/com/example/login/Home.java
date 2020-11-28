@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Home extends AppCompatActivity {
-    TextView txt_profile_name;
+    //TextView txt_profile_name;
     Button btn_logout;
 
     SharedPreferences sharedpreferences;
@@ -23,8 +23,8 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        txt_profile_name = (TextView) findViewById(R.id.txt_profile_name);
-        txt_profile_name.setText(getIntent().getExtras().get("name").toString());
+        //txt_profile_name = (TextView) findViewById(R.id.txt_profile_name);
+        //txt_profile_name.setText(getIntent().getExtras().get("name").toString());
 
         btn_logout = (Button) findViewById(R.id.btn_logout);
         btn_logout.setOnClickListener(new View.OnClickListener() {
@@ -66,5 +66,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void DaftarBuku(View view) {
+        Intent DaftarBuku= new Intent(Home.this, ActivityDaftarBuku.class);
+        startActivity(DaftarBuku);
     }
 }
