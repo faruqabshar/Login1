@@ -1,61 +1,73 @@
 package com.example.login;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-
 import java.util.ArrayList;
 
-public class bukuadapter extends RecyclerView.Adapter<bukuadapter.ListViewHolder>{
-    private ArrayList<buku> listbuku;
 
+public class bukuadapter extends BaseAdapter {
 
-    public bukuadapter(ArrayList<buku> list) {
-        this.listbuku = list;
+    private Context context;
+    private ArrayList<buku> bukus = new ArrayList<>();
+
+    //setter hasil generate
+    public void setHeroes(ArrayList<buku> heroes) {
+        this.bukus = heroes;
     }
 
-
-    @NonNull
-    @Override
-    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_row_buku, viewGroup, false);
-        return new ListViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
-        buku buku = listbuku.get(position);
-
-        Glide.with(holder.itemView.getContext())
-                .load(buku.getPhoto())
-                .apply(new RequestOptions().override(55, 55))
-                .into(holder.imgPhoto);
-        holder.tvName.setText(buku.getName());
-        holder.tvDescription.setText(buku.getDescription());
+    //constructor hasil generate
+    public bukuadapter(Context context) {
+        this.context = context;
     }
 
     @Override
-    public int getItemCount() {
-        return listbuku.size();
+    public int getCount() {
+        return bukus.size();
     }
 
-    class ListViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgPhoto;
-        TextView tvName, tvDescription;
+    @Override
+    public Object getItem(int i) {
+        return bukus.get(i);
+    }
 
-        ListViewHolder(View itemView) {
-            super(itemView);
-            imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            tvName = itemView.findViewById(R.id.tv_item_name);
-            tvDescription = itemView.findViewById(R.id.tv_item_description);
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        View itemView = view;
+        if (itemView == null) {
+            itemView = LayoutInflater.from(context).inflate(R.layout.item_buku, viewGroup, false);
+        }
+        ViewHolder viewHolder = new ViewHolder(itemView);
+        buku Buku = (buku) getItem(i);
+        viewHolder.bind(Buku);
+        return itemView;
+    }
+
+    private class ViewHolder {
+        private TextView txtName;
+        private TextView txtDescription;
+        private ImageView imgPhoto;
+
+        ViewHolder(View view) {
+            txtName = view.findViewById(R.id.txt_name);
+            txtDescription = view.findViewById(R.id.txt_description);
+            imgPhoto = view.findViewById(R.id.img_photo);
+        }
+
+        void bind(buku Buku) {
+            txtName.setText(Buku.getName());
+            txtDescription.setText(Buku.getDescription());
+            imgPhoto.setImageResource(Buku.getPhoto());
         }
     }
 }
