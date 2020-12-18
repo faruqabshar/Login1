@@ -35,20 +35,9 @@ public class ActivityDaftarBuku extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                for ( i = 0; i < dataName.length; i++) {
-                    buku hero = new buku();
-                    hero.setPhoto(dataPhoto.getResourceId(i, -1));
-                    hero.setName(dataName[i]);
-                    hero.setDescription(dataDescription[i]);
-                    buku.add(hero);
-                }
-                adapter.setHeroes(buku);
-                Intent intent= new Intent(ActivityDaftarBuku.this, Lihat1.class);
-                intent.putExtra("dataName", dataName[i] );
+                Intent intent= new Intent(ActivityDaftarBuku.this, Lihatbuku1.class);
                 startActivity(intent);
             }
-
-
 
         });
     }

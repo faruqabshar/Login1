@@ -4,6 +4,7 @@ public class buku {
     private int photo;
     private String name;
     private String description;
+    private int file;
 
     public static void add(buku Buku) {
     }

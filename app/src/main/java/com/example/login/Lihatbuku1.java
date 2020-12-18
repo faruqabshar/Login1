@@ -13,5 +13,9 @@ public class Lihatbuku1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihatbuku1);
 
+        pdfView = findViewById(R.id.pdfView);
+        pdfView.fromAsset("Buku2.pdf")
+                .enableSwipe(true)
+                .load();
     }
 }

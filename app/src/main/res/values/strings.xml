@@ -64,5 +64,9 @@
         <item>@drawable/cover2</item>
     </array>
 
+    <string name="data_file">
+        <item>@assets/Buku1</item>
+        <item>@assets/Buku2</item>
+    </string>
 
 </resources>
