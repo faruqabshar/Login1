@@ -1,66 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ActivityDaftarBuku">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".ActivityDaftarBuku"
+    >
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-    <ListView
-        android:layout_marginTop="50dp"
-        android:id="@+id/lv_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    </LinearLayout>
 
     <Button
+        android:layout_toRightOf="@+id/btninfo"
         android:id="@+id/btninfo3"
         android:layout_width="145dp"
         android:layout_height="49dp"
         android:background="@color/colorWhite"
         android:onClick="DaftarBuku"
         android:text="DaftarBuku"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="0dp" />
 
     <Button
         android:id="@+id/btninfo4"
         android:layout_width="120dp"
         android:layout_height="49dp"
+        android:layout_toRightOf="@+id/btninfo3"
         android:background="#f85f6a"
         android:onClick="tentang"
         android:text="Tentang"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="0dp" />
 
 
     <Button
         android:id="@+id/btninfo"
-        android:layout_width="131dp"
+        android:layout_width="120dp"
         android:layout_height="49dp"
         android:background="#f85f6a"
         android:onClick="home"
-        android:text="home"
-        app:layout_constraintEnd_toStartOf="@+id/btninfo3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:text="home" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_below="@+id/btninfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_photo"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cover1"/>
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_toEndOf="@id/img_photo"
+            android:text="@string/judul1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/img_photo"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="R. Anton Raharja" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative2"
+        android:layout_below="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_photo1"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cover2"/>
+
+        <TextView
+            android:id="@+id/txt_name1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_toEndOf="@id/img_photo1"
+            android:text="@string/judul2"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_description1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name1"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/img_photo1"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="Masyarakat Digital Gotong Royong" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative3"
+        android:layout_below="@+id/relative2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_photo2"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cover3" />
+
+        <TextView
+            android:id="@+id/txt_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_toEndOf="@id/img_photo2"
+            android:text="@string/judul3"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_description2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name2"
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/img_photo2"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="Arthur Conan Doyle" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative4"
+        android:layout_below="@+id/relative3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_photo3"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cover4"/>
+
+        <TextView
+            android:id="@+id/txt_name3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@id/img_photo3"
+            android:text="@string/judul4"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_description3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name3"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/img_photo3"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="Charles M Horton" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative5"
+        android:layout_below="@+id/relative4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/img_photo4"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cover5"/>
+
+        <TextView
+            android:id="@+id/txt_name4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_toEndOf="@id/img_photo4"
+            android:text="Si Anak Pelangi"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txt_description4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name4"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/img_photo4"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="Tere Liye" />
+
+    </RelativeLayout>
+</RelativeLayout>
+</ScrollView>

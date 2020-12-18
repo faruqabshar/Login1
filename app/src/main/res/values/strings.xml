@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="app_name">BacaYUK!</string>
 
     <string name="title_activity_login">Masuk atau Mendaftar</string>
     <string name="title_activity_main">Dashboard</string>
@@ -41,11 +41,17 @@
     <string name="name_buku">Nama Buku</string>
     <string name="publisher">Publisher</string>
     <string name="judul1">Administrasi Jaringan Linux</string>
+    <string name="judul2">Pengantar Sistem Operasi Komputer</string>
+    <string name="judul3">The Adventure Of Sherlock Holmes</string>
+    <string name="judul4">Opportunities In Engineering</string>
     <string name="Author1">R. Anton Raharya, dkk.</string>
     <string name="pemublish1">-</string>
-    <string name="judul2">Pengantar Sistem Operasi Komputer</string>
     <string name="Author2">Masyarakat Digital Gotong Royong</string>
     <string name="buku_name">buku_name</string>
+    <string name="nama1">Administrasi Jaringan Linux </string>
+    <string name="nama2">Pengantar Sistem Operasi Komputer</string>
+    <string name="nama3">buku_name</string>
+    <string name="nama4">buku_name</string>
 
 
     <string-array name="data_name">
@@ -55,7 +61,7 @@
     </string-array>
 
     <string-array name="data_description">
-        <item>Jaringan > Pemrograman</item>
+        <item></item>
         <item>Buku Pengantar OS Plus Ilustrasi Kernel Linux</item>
     </string-array>
 
@@ -64,9 +70,9 @@
         <item>@drawable/cover2</item>
     </array>
 
-    <string name="data_file">
-        <item>@assets/Buku1</item>
-        <item>@assets/Buku2</item>
-    </string>
+    <array name="data_file">
+        <item>android:src=assets/Buku1.pdf</item>
+        <item>Buku2.pdf</item>
+    </array>
 
 </resources>
